@@ -1,2 +1,26 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!--ユーザーの詳細-->
+<main>
+  <div>
+    <h2><%= @user.name %></h2>
+    <%= image_tag @user.get_profile_image(100,100) %>
+  </div>
+</main>
+
+<table class="table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th>
+        <span><%= user.name %></span>
+      </th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th>
+        <span><%= user.introduction </span>
+      </th>
+    </tr>
+  </tbody>
+  
+</table>
