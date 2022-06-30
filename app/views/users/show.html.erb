@@ -2,7 +2,10 @@
 <main>
   <div>
     <h2><%= @user.name %></h2>
-    <%= image_tag @user.get_profile_image(100,100) %>
+      <% if book.image.attached? %>
+        <%= image_tag @user.get_profile_image(100,100) %>
+      <% else %>
+        <%= image_tag 'no_image',
   </div>
 </main>
 
@@ -18,7 +21,7 @@
     <tr>
       <th>introduction</th>
       <th>
-        <span><%= user.introduction </span>
+        <span><%= user.introduction %></span>
       </th>
     </tr>
   </tbody>
