@@ -42,3 +42,56 @@ header {
   margin-right: auto;
   margin-left: auto;
 }
+
+.px-5 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.col-md-3 {
+ position: relative;
+ width: 100%;
+ padding-right: 15px;
+ padding-left: 15px;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
