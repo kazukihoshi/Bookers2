@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    
+    @book = Book.find(book_params)
   end
 
   def edit
