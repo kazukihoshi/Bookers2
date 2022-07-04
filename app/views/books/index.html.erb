@@ -8,6 +8,7 @@
         <% else %>
           <%= image_tag 'no_image',size: "200x200" %>
         <% end %>
+        
         <table class="table">
           <tbody>
             <tr></tr>
@@ -30,12 +31,12 @@
       
         <div class="field">
           <%= f.label :Title %>
-          <%= text.field :title %>
+          <%= text_field :title %>
         </div>
         
         <div class="field">
           <%= f.label :Opinion %>
-          <%= text.area :opinion %>
+          <%= text_area :opinion %>
         </div>
         
         <div class="actions">
@@ -44,4 +45,8 @@
       <% end %>
     </div>
   </div>
+  
+  <!--投稿一覧-->
+  <%= @books.each do |book| %>
+  
 </main>
