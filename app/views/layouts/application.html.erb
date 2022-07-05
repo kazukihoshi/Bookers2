@@ -34,29 +34,41 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to ,books_path(current_user.id, class: 'nav-link text-light' do %>
+                <%= link_to books_path, class: 'nav-link text-light' do %>
                   <i class="fas fa-book-open"></i>
                   Books
                 <% end %>
               </li>
               <li>
-                <%= link_to ,destroy_user_session_path,method: :delete,class: 'nav-link text-light' do %>
+                <%= link_to destroy_user_session_path,method: :delete ,class: 'nav-link text-light' do %>
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Log out
                 <% end %>
               </li>
               <% else %>
-              <li class="nav-item">
-                <%= link_to "Home",root_path,class:'nav-link text-light' %>
+              <li>
+                <%= link_to root_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-home"></i>
+                Home
+                <% end %>
               </li>
-              <Li class="nav-item">
-                <%= link_to "About",about_path,class:'nav-link text-light' %>
+              <Li>
+                <%= link_to about_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-link"></i>
+                About
+                <% end %>
               </Li>
-              <li class="nav-item">
-                <%= link_to "Sign up",new_user_registration_path,class:'nav-link text-light' %>
+              <li>
+                <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-user-plus"></i>
+                Sign up
+                <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to "Log in",new_user_session_path,class:'nav-link text-light' %>
+              <li>
+                <%= link_to new_user_session_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-sign-in-alt"></i>
+                Log in
+                <% end %>
               </li>
               <% end %>
             </ul>
