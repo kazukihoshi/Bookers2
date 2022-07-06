@@ -63,7 +63,7 @@
             <tr>
               <td>
                 <%= link_to user_path(book.user) do %>
-                  <%= image_tag book.user, :profile_image,
+                  <%= image_tag book.user, :profile_image %>
               </td>
               <td>
                 <%= link_to books_path, class: "book_user.id" %>
@@ -75,6 +75,3 @@
     </div>
   </div>
 </div>
-
- <%= link_to user_path(book.user) do %>
-                  <%= image_tag user.get_profile_image(100,100) %>
