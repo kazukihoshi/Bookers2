@@ -61,12 +61,12 @@
             <tr>
               <td>
                 <%= link_to user_path(book.user) do %>
-                  <%= image_tag @user.get_profile_image(100,100) %>
+                  <%= image_tag @user.get_profile_image(100,100) %><br>
+                  <%= @user.name %>
                 <% end %>
               </td>
               <td>
-                <%= link_to books_path, class: "book_user.id" %>
-                  <%= book.title %>
+                <%= link_to book.title %>
               </td>
               <td>
                 <%= book.body %>
