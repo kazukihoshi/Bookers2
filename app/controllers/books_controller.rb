@@ -6,7 +6,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    
+    @books = Book.all
+    @user = current_user
   end
 
   def edit
