@@ -22,6 +22,12 @@ class UsersController < ApplicationController
     redirect_to book_path(@book.id)
   end
   
+  def update
+    @user = User.all
+    @user.update
+    redirect_to user_path
+  end
+  
   private
   
   def user_params
