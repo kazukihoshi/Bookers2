@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    redirect_to
+    
   end
   
   def index
@@ -20,12 +20,27 @@ class UsersController < ApplicationController
     @book.user = current_user
     @book.save
     redirect_to book_path(@book.id)
+    @user = login(params[:name], params[:password])
+    if @user
+      redirect_back_or_to root_path, success: t('.create.success')
+    else
+      flash.now[:danger] = t('.create.fail')
+      render :new
+    end
   end
   
   def update
     @user = User.all
-    @user.update
-    redirect_to user_path
+    @user.update(user_params)
+    if @user.update(user_params)
+      flash[:notice] = "You have updated user successfully."
+      redirect_to user_path
+    else 
+      flash[:alret] = "You have updated user successfully."
+      render books_path
+    end
+    
+    
   end
   
   private
