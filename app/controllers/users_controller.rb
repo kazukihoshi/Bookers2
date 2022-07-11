@@ -25,8 +25,9 @@ class UsersController < ApplicationController
       redirect_back_or_to root_path, success: t('.create.success')
     else
       flash.now[:danger] = t('.create.fail')
-      render :new
+      render new
     end
+    
   end
   
   def update
