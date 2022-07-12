@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   
   def index
     @user = current_user
+    @users = User.all
     @books =Book.all
   end
   
@@ -20,13 +21,6 @@ class UsersController < ApplicationController
     @book.user = current_user
     @book.save
     redirect_to book_path(@book.id)
-    @user = login(params[:name], params[:password])
-    if @user
-      redirect_back_or_to root_path, success: t('.create.success')
-    else
-      flash.now[:danger] = t('.create.fail')
-      render new
-    end
     
   end
   
@@ -35,13 +29,10 @@ class UsersController < ApplicationController
     @user.update(user_params)
     if @user.update(user_params)
       flash[:notice] = "You have updated user successfully."
-      redirect_to user_path
+      redirect_to users_path
     else 
-      flash[:alret] = "You have updated user successfully."
-      render books_path
+      render :edit
     end
-    
-    
   end
   
   private
