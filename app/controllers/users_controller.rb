@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
-    @books = Book.all
-    @book = Book.new
+    @book = Book.find(params[:id])
   end
 
   def edit
@@ -18,11 +17,12 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(book_params)
-    @book.user = current_user
+    @book = Book.new(book_params)
+    @book.user_id = current_user_id
     @book.save
     redirect_to book_path(@book.id)
-    
   end
+
   
   def update
     @user = User.all
