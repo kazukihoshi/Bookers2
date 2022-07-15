@@ -42,6 +42,18 @@ class BooksController < ApplicationController
     else
       render :edit
     end
+    
+    if @user.update(user_params)
+      flash[:notice] = "You have updated user successfully."
+      redirect_to users_path
+    else 
+      render :edit
+    end
+  end
+  
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
   end
   
   private
