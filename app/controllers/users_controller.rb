@@ -1,12 +1,21 @@
 class UsersController < ApplicationController
+
   def show
+    @user_new = User.new
     @user = User.find(params[:id])
-    @book_user = current_user
-    @books = @user.books
+    @book =@user.books
+    @book_new = Book.new
+    @books = Book.all
   end
 
   def edit
     @user = User.find(params[:id])
+    @books = Book.all
+    @book = @user.books
+    if @user == current_user
+    else
+      redirect_to user_path(current_user)
+    end 
     
   end
   
@@ -28,6 +37,8 @@ class UsersController < ApplicationController
     else 
       render :index
     end
+    
+    
   end
 
   
@@ -46,6 +57,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name,:introduction,:profile_image)
   end
+  
+  
 end
 
 
