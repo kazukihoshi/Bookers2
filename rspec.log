@@ -266,7 +266,7 @@ Userモデルのテスト
     トップ画面
 [32m      本のアイコンが表示される[0m
     アバウト画面
-[31m      本のアイコンが表示される (FAILED - 2)[0m
+[32m      本のアイコンが表示される[0m
     ヘッダー: ログインしていない場合
 [32m      Homeリンクのアイコンが表示される[0m
 [32m      Aboutリンクのアイコンが表示される[0m
@@ -290,16 +290,10 @@ Failures:
      [31m  expected to find link "" with href "/users/1" but there were no matches[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:277:in `block (5 levels) in <main>'[0m
 
-  2) [STEP3] 仕上げのテスト アイコンのテスト アバウト画面 本のアイコンが表示される
-     [31mFailure/Error: is_expected.to have_selector '.fas.fa-book'[0m
-     [31m  expected to find css ".fas.fa-book" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:370:in `block (4 levels) in <main>'[0m
-
-Finished in 44.83 seconds (files took 3.92 seconds to load)
-[31m199 examples, 2 failures[0m
+Finished in 48.15 seconds (files took 4.77 seconds to load)
+[31m199 examples, 1 failure[0m
 
 Failed examples:
 
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:276[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:369[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト アバウト画面 本のアイコンが表示される[0m
 
